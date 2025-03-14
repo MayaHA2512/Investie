@@ -1,6 +1,16 @@
+import json
+import yfinance as yf
+
+
 from django.shortcuts import render
-from django.http import HttpResponse
-# Create your views here.
 
 def index(request):
-    return HttpResponse('Hey there!')
+    stock_data = yf.Ticker("AAPL").history(period="6mo", auto_adjust=True)
+    labels = stock_data.index.strftime('%Y-%m-%d').tolist()
+    data = stock_data['Close'].tolist()
+    chart_data = {
+        'labels': labels,
+        'data': data
+    }
+    return render(request, 'chart_template.html', {'data': json.dumps(chart_data)})
+
