@@ -1,19 +1,16 @@
 from django.db import models
-
-# Create your models here.
-class Question(models.Model):
-    question_text = models.CharField(max_length=100)
-    pub_date = models.DateTimeField('date published')
-
-    def __str__(self):
-        return self.question_text
-
-class Choice(models.Model):
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.choice_text
+import csv
 
 
+class Stock(models.Model):
+    ticker = models.CharField(max_length=10, unique=True)
+    security_name = models.CharField(max_length=255)
+
+
+# def publish_tickers():
+#     with open('/Users/mayahettiarachchige/PycharmProjects/Investie/mysite/investie/nasdaq-listed.csv'
+# ) as csv_file:
+#         reader = csv.reader(csv_file)
+#         for row in reader:
+#             print('added an object')
+#             Stock.objects.create(ticker=row[0], security_name=row[1])
