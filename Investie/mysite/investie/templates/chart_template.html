@@ -19,6 +19,9 @@
         .then(response => response.json())
         .then(data => {
             document.getElementById('stock-price').innerText = `Current Price: $${data.current_price} last updated @ ${data.last_updated}`;
+            myChart.data.labels = data.chart_labels;
+myChart.data.datasets[0].data = data.chart_data;
+myChart.update();
         });
 }
 
