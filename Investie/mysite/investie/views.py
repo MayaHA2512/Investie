@@ -38,4 +38,6 @@ def get_live_price(request):
     print(f'getting ticker for {ticker}')
     stock = yf.Ticker(ticker)
     current_price = stock.history(period="1d")['Close'].iloc[0]
+    if current_price:
+        current_price = round(current_price, 2)
     return JsonResponse({'current_price': current_price, 'last_updated': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
