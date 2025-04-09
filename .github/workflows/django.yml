@@ -27,4 +27,4 @@ jobs:
         pip install -r Investie/mysite/requirements.txt
     - name: Run Tests
       run: |
-        python manage.py test
+        python Investie/mysite/manage.py test
