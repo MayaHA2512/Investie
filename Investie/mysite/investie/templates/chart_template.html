@@ -6,16 +6,22 @@
  </head>
  <body>
  <p id="stock-price">Current Price: Loading...</p>
+ <select id="ticker-select" onchange="fetchPrice()">
+     <option value="AAPL">Apple (AAPL)</option>
+    <option value="GOOG">Google (GOOG)</option>
+     </select>
 
      <canvas id="myChart" width="400" height="200"></canvas>
      <script>
          function fetchPrice() {
-    fetch('get_live_price/')
+    var ticker = document.getElementById('ticker-select').value;
+    fetch(`get_live_price/?ticker=${ticker}`)
         .then(response => response.json())
         .then(data => {
             document.getElementById('stock-price').innerText = `Current Price: $${data.current_price} last updated @ ${data.last_updated}`;
         });
-        }
+}
+
         fetchPrice();
         setInterval(fetchPrice, 30000);
          const ctx = document.getElementById('myChart').getContext('2d');

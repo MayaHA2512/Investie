@@ -33,8 +33,9 @@ def entry_view(request):
 
 
 def get_live_price(request):
-    # api_key = 'M7WMH9UKWLS88BMX'
-    # ts = TimeSeries(key=api_key, output_format='pandas')
-    # data, meta_data = ts.get_quote_endpoint(symbol='AAPL')
-    # current_price = data['05. price'][0]
-    return JsonResponse({'current_price': 3, 'last_updated': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+    print(request)
+    ticker = request.GET.get('ticker', 'AAPL')
+    print(f'getting ticker for {ticker}')
+    stock = yf.Ticker(ticker)
+    current_price = stock.history(period="1d")['Close'].iloc[0]
+    return JsonResponse({'current_price': current_price, 'last_updated': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
