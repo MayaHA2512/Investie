@@ -8,6 +8,9 @@ import os
 from django.conf import settings
 import csv
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
 from alpha_vantage.timeseries import TimeSeries
 
 def index(request):
@@ -68,4 +71,15 @@ def home(request):
 
 def watchlists(request):
     # Render a template called 'home.html'
-    return render(request, 'watchlists.html')
+    user = request.user
+    return render(request, 'watchlists.html', {'user': user.username})
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')  # Redirect to login page after successful registration
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})
