@@ -46,6 +46,15 @@
     <h1>{{ user }}'s Watchlists</h1>
 </head>
 <body>
+<tbody>
+    {% for ticker in watchlists %}
+        <tr class="hover:bg-gray-100 border-b">
+            <td class="p-2 font-medium">{{ ticker.watchlist_name }}</td>
+            <td class="p-2">{{ ticker.tickers|join:", " }}</td>  <!-- Properly display tickers -->
+            <td class="p-2">{{ ticker.user.username }}</td> <!-- Assuming 'user' is a ForeignKey to User -->
+        </tr>
+    {% endfor %}
+</tbody>
 
 </body>
 </html>

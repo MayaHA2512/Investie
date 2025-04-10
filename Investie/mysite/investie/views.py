@@ -12,6 +12,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from alpha_vantage.timeseries import TimeSeries
+from investie.models import Watchlist
 
 def index(request):
     ticker = request.GET.get('ticker', 'AAPL')
@@ -69,15 +70,18 @@ def home(request):
     return render(request, 'home.html')
 
 def watchlists(request):
+    print(request.user.is_authenticated)
     if request.user.is_authenticated:
         user = request.user
-        return render(request, 'watchlists.html', {'user': user.username})
+        watchlists_for_user = Watchlist.objects.filter(user=request.user)
+        print(f'These are the watchlists for {user}: {watchlists_for_user}')
+        return render(request, 'watchlists.html', {'user': user.username, 'watchlists': watchlists_for_user})
     else:
         if request.method == 'POST':
             form = UserCreationForm(request.POST)
             if form.is_valid():
                 form.save()
-                return redirect('login')  # Redirect to login page after successful registration
+                return redirect('login')
         else:
             form = UserCreationForm()
         return render(request, 'registration/register.html', {'form': form})
@@ -87,15 +91,19 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')  # Redirect to login page after successful registration
+            return redirect('login')
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
 
 def create_watchlist(request):
+    user = request.user
     if request.method == 'POST':
         print('YOOO A WATCHLIST HAS BEEN Created!')
+        print(json.loads(request.POST.get('watchlist'))[0])
         print('These are the deetes we have' + str(request.POST))
+        Watchlist.objects.create(watchlist_name='Watchlist 1', tickers=request.POST.get('watchlist'), user=user)
+        return redirect('watchlists')
     csv_path = os.path.join(settings.BASE_DIR, 'investie/nasdaq-listed.csv')
     tickers = []
     with open(csv_path, newline='') as f:
