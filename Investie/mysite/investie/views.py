@@ -66,13 +66,21 @@ def get_live_price(request):
     })
 
 def home(request):
-    # Render a template called 'home.html'
     return render(request, 'home.html')
 
 def watchlists(request):
-    # Render a template called 'home.html'
-    user = request.user
-    return render(request, 'watchlists.html', {'user': user.username})
+    if request.user.is_authenticated:
+        user = request.user
+        return render(request, 'watchlists.html', {'user': user.username})
+    else:
+        if request.method == 'POST':
+            form = UserCreationForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('login')  # Redirect to login page after successful registration
+        else:
+            form = UserCreationForm()
+        return render(request, 'registration/register.html', {'form': form})
 
 def register(request):
     if request.method == 'POST':
@@ -83,3 +91,15 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
+
+def create_watchlist(request):
+    if request.method == 'POST':
+        print('YOOO A WATCHLIST HAS BEEN Created!')
+        print('These are the deetes we have' + str(request.POST))
+    csv_path = os.path.join(settings.BASE_DIR, 'investie/nasdaq-listed.csv')
+    tickers = []
+    with open(csv_path, newline='') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            tickers.append({'symbol': row['AACBU'], 'name': row['Artius II Acquisition Inc. - Units']})
+    return render(request, 'create_watchlist.html', {'tickers': tickers})

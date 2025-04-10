@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 # noinspection PyUnresolvedReferences
-from investie.views import home, watchlists, register
+from investie.views import home, watchlists, register, create_watchlist
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +25,7 @@ urlpatterns = [
 path('home/', home, name='home'),
 path('watchlists/', watchlists, name='watchlists'),
 path('register/', register, name='register'),
+path('create_watchlist/', create_watchlist, name='create_watchlist'),
     path('members/', include('django.contrib.auth.urls')),
     path('members/', include('members.urls')),
 ]
