@@ -4,6 +4,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import yfinance as yf
 import json
+import os
+from django.conf import settings
+import csv
 from django.http import JsonResponse
 from alpha_vantage.timeseries import TimeSeries
 
@@ -17,7 +20,14 @@ def index(request):
         'data': data
     }
 
-    return render(request, 'chart_template.html', {'data': json.dumps(chart_data)})
+    csv_path = os.path.join(settings.BASE_DIR, 'investie/nasdaq-listed.csv')
+    tickers = []
+    with open(csv_path, newline='') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            tickers.append({'symbol': row['AACBU'], 'name': row['Artius II Acquisition Inc. - Units']})
+
+    return render(request, 'chart_template.html', {'data': json.dumps(chart_data), 'tickers': tickers})
 
 from django.shortcuts import render
 from .forms import EntryForm
