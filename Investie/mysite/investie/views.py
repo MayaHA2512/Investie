@@ -61,3 +61,11 @@ def get_live_price(request):
         'chart_labels': labels,
         'chart_data': chart_data
     })
+
+def home(request):
+    # Render a template called 'home.html'
+    return render(request, 'home.html')
+
+def watchlists(request):
+    # Render a template called 'home.html'
+    return render(request, 'watchlists.html')
