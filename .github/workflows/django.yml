@@ -45,3 +45,6 @@ jobs:
         cd Investie/mysite
         python manage.py test --verbosity=2
 
+    - name: Apply database migrations
+      run: |
+        python manage.py migrate
