@@ -1,62 +1,63 @@
-**INVESTIE**
+# **INVESTIE**
 
-**Introduction**
+## **Introduction**
 
-Investie is a full-stack Django web application designed to increase financial literacy among new 
-investors and streamline personal investment tracking and analysis. This project integrates a user-friendly frontend, robust middleware and a secure backend to provide a seamless experience for users.
+**Investie** is a full-stack Django web application designed to empower new investors by enhancing their financial literacy and providing a streamlined, interactive platform for personal investment tracking and analysis. This project integrates a user-friendly frontend, robust middleware, and a secure backend to offer a seamless user experience.
 
-**Project Aim & Objectives**
+## **Project Aim & Objectives**
 
-Aim: Develop a comprehensive platform to allow user to monitor and track stocks to their liking with several views which provide real time and historical data.
+### **Aim:**
+Develop a comprehensive platform that allows users to track and monitor stocks of their choice through various views providing real-time and historical data.
 
-Objectives: 
-1. Implement secure user authentication
-2. Enable users to create, read, update and delete watchlists
-3. Provide real time data visualisation
-4. Deploy the application for public access
+### **Objectives:**
+1. **Implement secure user authentication.**
+2. **Enable users to create, read, update, and delete watchlists.**
+3. **Provide real-time data visualization.**
+4. **Deploy the application for public access.**
 
-**Enterprise considerations**
+## **Enterprise Considerations**
 
-Performance 
+### **Performance:**
+- Utilized Django's efficient ORM to optimize database queries.
+- Implemented caching to reduce server load and improve response times.
 
-- Utilized Django's efficent ORM for optimized database queires
-- Implemented caching to reduce server load and improve response time
+### **Scalability:**
+- Adopted a modular architecture, separating concerns across different Django applications.
+- Designed a system that accommodates increasing user loads and growing data volumes.
 
-Scalability
-- Adopted a modular achitechture separating conceresn across different Django applications
-- Designed a system that accomodates to increasing user loads and data volume
+### **Security:**
+- Employed Django's built-in authentication system with password hashing.
+- Implemented CSRF protection and input validation to mitigate common web vulnerabilities.
+- Ensured user-friendly error messages for a smooth experience.
 
-Security
-- Employed Django's built-in authentication system with password hashing
-- Implemented CSRF protection and input validation to prevent common web vulnerabilities
-- Ensured user-friendly error messages
+### **Deployment:**
+- Deployed the application on **Render** for robust hosting.
+- Configured continuous integration and deployment pipelines to streamline updates.
+- Website can be accessed at: https://investie.onrender.com
 
-Deployment
-- Deployed the application on Render
-- Configured continuous integration and deployment pipelines for streamlined updates
+## **Installation and Usage Instructions**
 
-**Installation and usage instructions**
+### **Prerequisites:**
+- **Python 3.x**
+- **pip**
+- Your preferred database
+- **Git**
 
-Prerequisites
-- Python 3.x
-- pip
-- Your chosen database
-- Git
 
 Setup Steps
 
 1. Clone the repository:
-   ```
+   ```python
    git clone https://github.com/MayaHA2512/Investie.git
    cd Investie
    ```
 2. Create and activate a virtual environment:
-   ```
+   ```python
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 3. Install dependencies:
-   ```
+   ```python
    pip install -r requirements.txt
    ```
 4. Configure enviroment variables:
@@ -68,18 +69,18 @@ Setup Steps
      DATABASE_URL=your_database_url
      ```
 5. Apply migrations:
-   ```
+   ```python
    python manage.py migrate
    ```
 6. Run the development server:
-   ```
+   ```python
    python manage.py runserver
    ```
 7. Access the application at http://localhost:8000/ in your web browser
 
-**Feature overview **
+**Feature overview**
 
-Realtime and historical data visualisation 
+**Realtime and historical data visualisation** 
 
 Purpose: Provides users with graphical representations of stock performance, helping them make informed investment decisions
 
@@ -91,7 +92,7 @@ Location in Code:
 Endpoints / Modules involved:
 
 - Yahoo Finance API: yfinance was used to provide both realtime and historical data that was then surfaced for our analysis page as seen below
-  ```
+  ```python
   def index(request):
     ticker = request.GET.get('ticker', 'AAPL')
     stock_data = yf.Ticker(ticker).history(period="6mo", auto_adjust=True)
@@ -103,7 +104,7 @@ Endpoints / Modules involved:
     }
   ```
 - JS chart logic:
-  ```
+  ```python
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   const myChart = new Chart(ctx, {
              type: 'line',
@@ -119,11 +120,173 @@ Endpoints / Modules involved:
          })
   ```
   
+This is an example of the live pricing and the historical data that has been plotted:
 
+<img width="1437" alt="Screenshot 2025-04-11 at 20 09 50" src="https://github.com/user-attachments/assets/98f2a143-3e91-4f06-ab09-629f4c6f8267" />
 
+**User Authentication (Register/Login)**
 
+Purpose: Provides users confidence that they're information is being stored safely + features such as creating watchlists require a user to create a session so that they're watchlists are stored into the database appropriately 
 
+Location in Code: 
+- Frontend: templates/registration/register.html + templates/registration/login.html
+- Logic/Data: views.py
+- Authentication: Django user authentication system
 
+Endpoints / Modules involved:
 
+- Login Endpoint:
+  - URL: /login/
+  - Method: POST (and GET for rendering the login page)
+  - Description: This endpoint handles user login by accepting credentials (username/email and password). Upon successful authentication, the user is granted access to the            system, and a session is created
+  - View: Handled by Django's built-in LoginView
 
+- django.contrib.auth library which helps with:
+  1. Password strength checking
+  2. Throttling of login attempts
+  3. Authentication against third-parties (OAuth, for example)
+ 
+Cross-Site Request Forgery (CSRF) is a vulnerability where an attacker tricks a user into performing an unwanted action on a web application where they are authenticated. Django provides built-in protections against CSRF attacks by using a middleware and token system. Enabling CSRF Middleware (Django's Default Setting): Django’s CSRF protection is enabled by default in the middleware settings. This is what the middleware looks like in the code (in settings.py):
+
+```python
+MIDDLEWARE= [
+'django.middleware.csrf.CsrfViewMiddleware',
+...]
+```
+
+Input Validation helps to ensure that only well-formed, safe data is processed by your application. This prevents several common vulnerabilities, such as SQL injection, cross-site scripting (XSS), and improper data handling.
+ 
+Here are a few screenshots showcasing the authentication system:
+
+<img width="1275" alt="Screenshot 2025-04-11 at 20 35 35" src="https://github.com/user-attachments/assets/6a01c7d6-eed7-47a4-a506-09f2ea7a3704" />
+<img width="1273" alt="Screenshot 2025-04-11 at 20 43 45" src="https://github.com/user-attachments/assets/338ae5a2-ca0f-4b44-9eb4-6176182c289f" />
+
+**Creating watchlists**
+
+Purpose: This is where users get the chance to explore collections of stocks and mimic a portfolio which they can track locally 
+
+Location in Code: 
+- Frontend: templates/watchlists.html + templates/view_watchlists
+- Logic/Data: views.py
+- Dynamic urls are also configured in views.py
+
+Endpoints / Modules involved:
+
+- Yahoo Finance API: yfinance was used to provide both realtime and historical data that was then surfaced for our analysis page as seen below
+  ```python
+  def view_watchlist(request, id):
+    watchlist = get_object_or_404(Watchlist, id=id)
+    stocks = watchlist.tickers
+    print('These are the stocks' + str(stocks))
+    labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    data = {}
+    for stock in stocks:
+        stock_prices = [
+            get_price_for_day(stock, day) for day in range(1, 7)
+        ]
+        data[stock] = stock_prices
+    chart_data = {
+        'labels': labels,
+        'datasets': []
+    }
+    for stock_symbol, prices in data.items():
+        chart_data['datasets'].append({
+            'label': stock_symbol,
+            'data': prices,
+            'backgroundColor': 'rgba(75, 192, 192, 0.2)',
+            'borderColor': 'rgba(75, 192, 192, 1)',
+            'borderWidth': 1
+        })
+    chart_data_json = json.dumps(chart_data)
+    return render(request, 'view_watchlist.html', {'watchlist': watchlist, 'chart_data': chart_data_json})
+  ```
+This is how it gets displayed in the UI:
+```html
+<script>
+        var chartData = JSON.parse('{{ chart_data|escapejs }}');
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',  
+            data: chartData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                responsive: true
+            }
+        });
+ </script>
+```
+Below are a few screenshots documenting the workflow:
+
+<img width="1094" alt="Screenshot 2025-04-11 at 21 38 00" src="https://github.com/user-attachments/assets/649afe23-cb2a-46b9-a2c0-60fe431110d1" />
+<img width="1101" alt="Screenshot 2025-04-11 at 21 41 17" src="https://github.com/user-attachments/assets/a696b99f-b459-484b-aa52-fe4c56f45930" />
+<img width="1438" alt="Screenshot 2025-04-11 at 21 42 57" src="https://github.com/user-attachments/assets/6a518f61-de53-44a9-808a-0c74c02fadc9" />
+
+**Middleware**
+
+Purpose: Acts as the intermediary between the frontend interface and backend data sources. This layer handles HTTP request logic, processes data from APIs like Yahoo Finance, and sends appropriate responses to the frontend.
+
+Responsibiltiies:
+1. Accepts input (e.g., stock ticker) from frontend forms.
+2. Calls external APIs (yfinance) to fetch live and historical data.
+3. Prepares chart data (labels and values) for display.
+4. Returns context data to templates using Django views.
+
+Location in Code:
+- views.py in analysis/ and watchlist/ apps.
+- External API call logic (e.g., yf.Ticker(ticker).history()).
+- Data processing logic (e.g., building chart-friendly JSON).
+
+Example Snippet from Middleware (views.py):
+
+```python
+def index(request):
+    ticker = request.GET.get('ticker', 'AAPL')
+    stock_data = yf.Ticker(ticker).history(period="6mo", auto_adjust=True)
+    labels = stock_data.index.strftime('%Y-%m-%d').tolist()
+    data = stock_data['Close'].tolist()
+    chart_data = {
+        'labels': labels,
+        'data': data
+    }
+    return render(request, 'analysis.html', {'chart_data': chart_data})
+```
+
+Although defined within views.py, this function acts as the services layer in our architecture. It bridges user interaction on the frontend with backend API logic, handling data retrieval, transformation, and delivery to the client in a clean, structured format.
+
+**CI/CD Pipeline**
+
+Tools Used:
+- GitHub Actions for CI/CD
+- Django’s built-in test runner for unit testing
+- Deployment via Render
+
+Pipeline Steps:
+
+Trigger: On every push or pull request to the main or dev branch
+Setup:
+Use a Python 3.x environment
+Install dependencies from requirements.txt
+Set environment variables if needed
+Run Tests:
+Use python manage.py test to validate views, models, and APIs
+<img width="1401" alt="Screenshot 2025-04-11 at 21 57 08" src="https://github.com/user-attachments/assets/3244cb9b-f121-4140-bee1-ce1f5a751e6e" />
+Deploy:
+Auto-deploy to Render 
+
+**Known issues and future enhancements**
+
+Issues:
+
+- Stock Data Delays: The Yahoo Finance API sometimes experiences delays in delivering real-time stock data. This may cause the charts to be updated less frequently or with slight discrepancies and many finance APIs have a restriction on the number of queries can be sent in per day
+- Limited Stock Ticker Support: Some lesser-known stock tickers may not be supported by the Yahoo Finance API, which could result in errors or empty data.
+
+Improvements:
+
+- User Profile Customization: Allow users to personalize their profiles, such as setting preferences for notifications, stocks, or even the layout of their dashboard.
+- Improved Data Sources: Integrate additional financial data sources (e.g., Alpha Vantage or IEX Cloud) to provide more comprehensive and accurate stock data, especially for international markets.
 
