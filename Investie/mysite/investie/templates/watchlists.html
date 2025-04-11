@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{{ user }}'s Watchlists</title>
@@ -32,6 +33,7 @@
     }
   </style>
 </head>
+
 <body class="bg-gray-50 min-h-screen">
 
   <div class="toolbar">
@@ -52,10 +54,13 @@
     {% if watchlists %}
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {% for ticker in watchlists %}
-          <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+          <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105">
             <h2 class="text-xl font-semibold text-blue-600 mb-2">{{ ticker.watchlist_name }}</h2>
             <p class="text-gray-700 text-sm"><strong>Tickers:</strong> {{ ticker.tickers|join:", " }}</p>
             <p class="text-gray-500 text-xs mt-3">Created by: {{ ticker.user.username }}</p>
+            <div class="mt-4 text-right">
+              <a href="/watchlist/{{ ticker.id }}" class="text-blue-500 hover:text-blue-700">View Watchlist</a>
+            </div>
           </div>
         {% endfor %}
       </div>
@@ -65,4 +70,6 @@
   </div>
 
 </body>
+
 </html>
+

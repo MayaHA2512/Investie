@@ -1,0 +1,63 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .toolbar {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px 20px;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .toolbar h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    .toolbar nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    .toolbar nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ watchlist.watchlist_name }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <div class="toolbar bg-gray-800 text-white p-4">
+    <h1>📊 MyStockTracker</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/stock_prices/">Analysis</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+      <a href="/watchlists/">Watchlists</a>
+      <a href="/create_watchlist/">Create Watchlist</a>
+    </nav>
+  </div>
+
+  <div class="max-w-5xl mx-auto mt-10 px-4">
+    <h1 class="text-3xl font-bold mb-4">{{ watchlist.watchlist_name }}</h1>
+    <p class="text-lg text-gray-700 mb-4"><strong>Tickers:</strong> {{ watchlist.tickers|join:", " }}</p>
+    <p class="text-sm text-gray-500">Created by: {{ watchlist.user.username }}</p>
+
+    <div class="mt-6">
+      <h2 class="text-xl font-semibold">Chart Preview (Coming soon)</h2>
+    </div>
+  </div>
+
+</body>
+</html>

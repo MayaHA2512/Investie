@@ -13,6 +13,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from alpha_vantage.timeseries import TimeSeries
 from investie.models import Watchlist
+from django.shortcuts import render, get_object_or_404
 
 def index(request):
     ticker = request.GET.get('ticker', 'AAPL')
@@ -111,3 +112,9 @@ def create_watchlist(request):
         for row in reader:
             tickers.append({'symbol': row['AACBU'], 'name': row['Artius II Acquisition Inc. - Units']})
     return render(request, 'create_watchlist.html', {'tickers': tickers})
+
+
+def view_watchlist(request, id):
+    watchlist = get_object_or_404(Watchlist, id=id)
+
+    return render(request, 'view_watchlist.html', {'watchlist': watchlist})
