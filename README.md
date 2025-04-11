@@ -77,7 +77,7 @@ Setup Steps
    ```
 7. Access the application at http://localhost:8000/ in your web browser
 
-**Feature overview **
+**Feature overview**
 
 **Realtime and historical data visualisation** 
 
