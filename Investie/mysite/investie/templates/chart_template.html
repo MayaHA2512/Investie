@@ -44,12 +44,20 @@
       <a href="/watchlists/">Watchlists</a>
   </nav>
 </div>
- <p id="stock-price">Current Price: Loading...</p>
- <select id="ticker-select" onchange="fetchPrice()">
-     {% for ticker in tickers %}
-        <option value="{{ ticker.symbol }}">{{ ticker.name }} ({{ ticker.symbol }})</option>
+ <br>
+ <p id="stock-price" class="text-center max-w-full overflow-hidden text-ellipsis">
+  Current Price: Loading...
+</p>
+ <br>
+ <div class="flex justify-center">
+  <select id="ticker-select" onchange="fetchPrice()" class="text-center border p-2 rounded-lg pl-6 pr-4 w-full max-w-xs">
+    {% for ticker in tickers %}
+      <option value="{{ ticker.symbol }}">{{ ticker.name }} ({{ ticker.symbol }})</option>
     {% endfor %}
-     </select>
+  </select>
+</div>
+
+
 
      <canvas id="myChart" width="400" height="200"></canvas>
      <script>

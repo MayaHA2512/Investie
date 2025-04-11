@@ -118,3 +118,6 @@ def view_watchlist(request, id):
     watchlist = get_object_or_404(Watchlist, id=id)
 
     return render(request, 'view_watchlist.html', {'watchlist': watchlist})
+
+def home(request):
+    return render(request, 'home.html')
