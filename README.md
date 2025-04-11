@@ -152,7 +152,10 @@ MIDDLEWARE= [
 'django.middleware.csrf.CsrfViewMiddleware',
 ...]
 ```
+
+Input Validation helps to ensure that only well-formed, safe data is processed by your application. This prevents several common vulnerabilities, such as SQL injection, cross-site scripting (XSS), and improper data handling.
  
 Here are a few screenshots showcasing the authentication system:
 
+<img width="1275" alt="Screenshot 2025-04-11 at 20 35 35" src="https://github.com/user-attachments/assets/6a01c7d6-eed7-47a4-a506-09f2ea7a3704" />
 
