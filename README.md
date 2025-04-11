@@ -219,3 +219,9 @@ This is how it gets displayed in the UI:
         });
  </script>
 ```
+Below are a few screenshots documenting the workflow:
+
+<img width="1094" alt="Screenshot 2025-04-11 at 21 38 00" src="https://github.com/user-attachments/assets/649afe23-cb2a-46b9-a2c0-60fe431110d1" />
+<img width="1101" alt="Screenshot 2025-04-11 at 21 41 17" src="https://github.com/user-attachments/assets/a696b99f-b459-484b-aa52-fe4c56f45930" />
+<img width="1438" alt="Screenshot 2025-04-11 at 21 42 57" src="https://github.com/user-attachments/assets/6a518f61-de53-44a9-808a-0c74c02fadc9" />
+
