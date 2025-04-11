@@ -1,2 +1,3 @@
-web: gunicorn mysite.asgi:application --worker-class uvicorn.workers.UvicornWorker
+web: gunicorn mysite.mysite.wsgi:application
+
 
