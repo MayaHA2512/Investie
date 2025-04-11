@@ -258,4 +258,35 @@ def index(request):
 
 Although defined within views.py, this function acts as the services layer in our architecture. It bridges user interaction on the frontend with backend API logic, handling data retrieval, transformation, and delivery to the client in a clean, structured format.
 
-**CI/CD**
+**CI/CD Pipeline**
+
+Tools Used:
+- GitHub Actions for CI/CD
+- Django’s built-in test runner for unit testing
+- Deployment via Render
+
+Pipeline Steps:
+
+Trigger: On every push or pull request to the main or dev branch
+Setup:
+Use a Python 3.x environment
+Install dependencies from requirements.txt
+Set environment variables if needed
+Run Tests:
+Use python manage.py test to validate views, models, and APIs
+<img width="1401" alt="Screenshot 2025-04-11 at 21 57 08" src="https://github.com/user-attachments/assets/3244cb9b-f121-4140-bee1-ce1f5a751e6e" />
+Deploy:
+Auto-deploy to Render 
+
+**Known issues and future enhancements**
+
+Issues:
+
+- Stock Data Delays: The Yahoo Finance API sometimes experiences delays in delivering real-time stock data. This may cause the charts to be updated less frequently or with slight discrepancies and many finance APIs have a restriction on the number of queries can be sent in per day
+- Limited Stock Ticker Support: Some lesser-known stock tickers may not be supported by the Yahoo Finance API, which could result in errors or empty data.
+
+Improvements:
+
+- User Profile Customization: Allow users to personalize their profiles, such as setting preferences for notifications, stocks, or even the layout of their dashboard.
+- Improved Data Sources: Integrate additional financial data sources (e.g., Alpha Vantage or IEX Cloud) to provide more comprehensive and accurate stock data, especially for international markets.
+
