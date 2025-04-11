@@ -1,60 +1,68 @@
-<script src="https://cdn.tailwindcss.com"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>{{ user }}'s Watchlists</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-  .toolbar {
-    background-color: #2c3e50;
-    color: white;
-    padding: 10px 20px;
-    font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+    .toolbar {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px 20px;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  .toolbar h1 {
-    margin: 0;
-    font-size: 1.5em;
-  }
+    .toolbar h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
 
-  .toolbar nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 500;
-  }
+    .toolbar nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
 
-  .toolbar nav a:hover {
-    text-decoration: underline;
-  }
-</style>
-   <div class="toolbar">
-  <h1>📊 MyStockTracker</h1>
-  <nav>
-    <a href="/">Home</a>
+    .toolbar nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <div class="toolbar">
+    <h1>📊 MyStockTracker</h1>
+    <nav>
+      <a href="/">Home</a>
       <a href="/stock_prices/">Analysis</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
       <a href="/watchlists/">Watchlists</a>
       <a href="/create_watchlist/">Create Watchlist</a>
-  </nav>
-</div>
-    <meta charset="UTF-8">
-    <title>Title</title>
-  <h1>Watchlist page</h1>
-    <h1>{{ user }}'s Watchlists</h1>
-</head>
-<body>
-<tbody>
-    {% for ticker in watchlists %}
-        <tr class="hover:bg-gray-100 border-b">
-            <td class="p-2 font-medium">{{ ticker.watchlist_name }}</td>
-            <td class="p-2">{{ ticker.tickers|join:", " }}</td>  <!-- Properly display tickers -->
-            <td class="p-2">{{ ticker.user.username }}</td> <!-- Assuming 'user' is a ForeignKey to User -->
-        </tr>
-    {% endfor %}
-</tbody>
+    </nav>
+  </div>
+
+  <div class="max-w-5xl mx-auto mt-10 px-4">
+    <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">{{ user }}'s Watchlists</h1>
+
+    {% if watchlists %}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for ticker in watchlists %}
+          <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+            <h2 class="text-xl font-semibold text-blue-600 mb-2">{{ ticker.watchlist_name }}</h2>
+            <p class="text-gray-700 text-sm"><strong>Tickers:</strong> {{ ticker.tickers|join:", " }}</p>
+            <p class="text-gray-500 text-xs mt-3">Created by: {{ ticker.user.username }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-center text-gray-600">You haven't created any watchlists yet.</p>
+    {% endif %}
+  </div>
 
 </body>
 </html>

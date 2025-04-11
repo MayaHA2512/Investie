@@ -102,7 +102,7 @@ def create_watchlist(request):
         print('YOOO A WATCHLIST HAS BEEN Created!')
         print(json.loads(request.POST.get('watchlist'))[0])
         print('These are the deetes we have' + str(request.POST))
-        Watchlist.objects.create(watchlist_name='Watchlist 1', tickers=request.POST.get('watchlist'), user=user)
+        Watchlist.objects.create(watchlist_name=request.POST.get('watchlist_name'), tickers=json.loads(request.POST.get('watchlist')), user=user)
         return redirect('watchlists')
     csv_path = os.path.join(settings.BASE_DIR, 'investie/nasdaq-listed.csv')
     tickers = []
