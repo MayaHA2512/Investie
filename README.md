@@ -125,3 +125,24 @@ This is an example of the live pricing and the historical data that has been plo
 
 **User Authentication (Register/Login)**
 
+Purpose: Provides users confidence that they're information is being stored safely 
+Location in Code: 
+- Frontend: templates/registration/register.html + templates/registration/login.html
+- Logic/Data: views.py
+- Authentication: Django user authentication system
+
+Endpoints / Modules involved:
+
+- Login Endpoint:
+  - URL: /login/
+  - Method: POST (and GET for rendering the login page)
+  - Description: This endpoint handles user login by accepting credentials (username/email and password). Upon successful authentication, the user is granted access to the            system, and a session is created
+  - View: Handled by Django's built-in LoginView
+
+- django.contrib.auth library which helps with:
+  1. Password strength checking
+  2. Throttling of login attempts
+  3. Authentication against third-parties (OAuth, for example)
+ 
+
+
