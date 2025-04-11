@@ -160,5 +160,43 @@ Here are a few screenshots showcasing the authentication system:
 <img width="1275" alt="Screenshot 2025-04-11 at 20 35 35" src="https://github.com/user-attachments/assets/6a01c7d6-eed7-47a4-a506-09f2ea7a3704" />
 <img width="1273" alt="Screenshot 2025-04-11 at 20 43 45" src="https://github.com/user-attachments/assets/338ae5a2-ca0f-4b44-9eb4-6176182c289f" />
 
+**Creating watchlists**
 
+Purpose: This is where users get the chance to explore collections of stocks and mimic a portfolio which they can track locally 
+
+Location in Code: 
+- Frontend: templates/watchlists.html + templates/view_watchlists
+- Logic/Data: views.py
+- Dynamic urls are also configured in views.py
+
+Endpoints / Modules involved:
+
+- Yahoo Finance API: yfinance was used to provide both realtime and historical data that was then surfaced for our analysis page as seen below
+  ```python
+  def view_watchlist(request, id):
+    watchlist = get_object_or_404(Watchlist, id=id)
+    stocks = watchlist.tickers
+    print('These are the stocks' + str(stocks))
+    labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    data = {}
+    for stock in stocks:
+        stock_prices = [
+            get_price_for_day(stock, day) for day in range(1, 7)
+        ]
+        data[stock] = stock_prices
+    chart_data = {
+        'labels': labels,
+        'datasets': []
+    }
+    for stock_symbol, prices in data.items():
+        chart_data['datasets'].append({
+            'label': stock_symbol,
+            'data': prices,
+            'backgroundColor': 'rgba(75, 192, 192, 0.2)',
+            'borderColor': 'rgba(75, 192, 192, 1)',
+            'borderWidth': 1
+        })
+    chart_data_json = json.dumps(chart_data)
+    return render(request, 'view_watchlist.html', {'watchlist': watchlist, 'chart_data': chart_data_json})
+  ```
 
