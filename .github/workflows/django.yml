@@ -1,5 +1,9 @@
 name: Django CI
 
+env:
+  DJANGO_SETTINGS_MODULE: mysite.settings
+  PYTHONPATH: Investie
+
 on:
   push:
     branches: [ "main" ]
@@ -21,25 +25,21 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     
-    # Install dependencies
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r Investie/mysite/requirements.txt
     
-    # Print Python version and installed packages for debugging
     - name: Check Python version and installed packages
       run: |
         python --version
         pip freeze
 
-    # Change directory to where manage.py is located and apply migrations
     - name: Apply Migrations
       run: |
         cd Investie/mysite
         python manage.py migrate
 
-    # Run tests with increased verbosity to get more debug information
     - name: Run Tests
       run: |
         cd Investie/mysite
