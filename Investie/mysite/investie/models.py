@@ -12,5 +12,5 @@ class Stock(models.Model):
 class Watchlist(models.Model):
     watchlist_name = models.CharField(max_length=255)
     tickers = models.JSONField()
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.CharField(max_length=255)
 
