@@ -19,6 +19,20 @@ from alpha_vantage.timeseries import TimeSeries
 from investie.models import Watchlist
 from django.shortcuts import render, get_object_or_404
 
+
+def get_price_for_day(stock_symbol, days=7):
+    try:
+        print('Stock symbol is ' + str(stock_symbol))
+        stock = yf.Ticker(stock_symbol)
+        if stock:
+            history_data = stock.history(period=f"{days}d")
+            prices = history_data['Close'].tolist()
+            print('These are the prices' + str(prices))
+            dates = history_data.index.strftime('%Y-%m-%d').tolist()
+            return dates, prices
+    except Exception as e:
+        print('e')
+
 def index(request):
     ticker = request.GET.get('ticker', 'AAPL')
     stock_data = yf.Ticker(ticker).history(period="6mo", auto_adjust=True)
@@ -120,8 +134,29 @@ def create_watchlist(request):
 
 def view_watchlist(request, id):
     watchlist = get_object_or_404(Watchlist, id=id)
-
-    return render(request, 'view_watchlist.html', {'watchlist': watchlist})
+    stocks = watchlist.tickers
+    print('These are the stocks' + str(stocks))
+    labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    data = {}
+    for stock in stocks:
+        stock_prices = [
+            get_price_for_day(stock, day) for day in range(1, 7)
+        ]
+        data[stock] = stock_prices
+    chart_data = {
+        'labels': labels,
+        'datasets': []
+    }
+    for stock_symbol, prices in data.items():
+        chart_data['datasets'].append({
+            'label': stock_symbol,
+            'data': prices,
+            'backgroundColor': 'rgba(75, 192, 192, 0.2)',
+            'borderColor': 'rgba(75, 192, 192, 1)',
+            'borderWidth': 1
+        })
+    chart_data_json = json.dumps(chart_data)
+    return render(request, 'view_watchlist.html', {'watchlist': watchlist, 'chart_data': chart_data_json})
 
 def home(request):
     return render(request, 'home.html')

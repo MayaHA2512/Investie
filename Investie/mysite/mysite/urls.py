@@ -29,4 +29,5 @@ path('create_watchlist/', create_watchlist, name='create_watchlist'),
     path('members/', include('django.contrib.auth.urls')),
     path('members/', include('members.urls')),
 path('watchlist/<int:id>/', view_watchlist, name='view_watchlist'),
+    path('', home, name='home')
 ]

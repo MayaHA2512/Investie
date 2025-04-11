@@ -1,7 +1,11 @@
-<script src="https://cdn.tailwindcss.com"></script>
 <!DOCTYPE html>
 <html lang="en">
-<style>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ watchlist.watchlist_name }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
     .toolbar {
       background-color: #2c3e50;
       color: white;
@@ -27,18 +31,19 @@
     .toolbar nav a:hover {
       text-decoration: underline;
     }
-  </style>
-<head>
-  <meta charset="UTF-8">
-  <title>{{ watchlist.watchlist_name }}</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
+
+    .chart-container {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px 0;
+    }
   </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
 
   <div class="toolbar bg-gray-800 text-white p-4">
-    <h1>📊 MyStockTracker</h1>
+    <h1>📊 Investie</h1>
     <nav>
       <a href="/">Home</a>
       <a href="/stock_prices/">Analysis</a>
@@ -54,10 +59,49 @@
     <p class="text-lg text-gray-700 mb-4"><strong>Tickers:</strong> {{ watchlist.tickers|join:", " }}</p>
     <p class="text-sm text-gray-500">Created by: {{ watchlist.user.username }}</p>
 
-    <div class="mt-6">
-      <h2 class="text-xl font-semibold">Chart Preview (Coming soon)</h2>
+      <h2 class="text-xl font-semibold mb-4">📈 Chart Preview</h2>
+      <div class="chart-container">
+        <canvas id="demoChart"></canvas>
+      </div>
     </div>
-  </div>
+
+  <script>
+    const ctx = document.getElementById('demoChart').getContext('2d');
+    const demoChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Watchlist Stock Prices',
+          data: Array.from({ length: 7 }, () => Math.floor(Math.random() * 100) + 50),
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          borderWidth: 2,
+          tension: 0.3,
+          fill: true,
+          pointRadius: 5,
+          pointBackgroundColor: 'rgba(153, 102, 255, 1)'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: false
+          }
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Watchlist Price Trend',
+            font: {
+              size: 18
+            }
+          }
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>
