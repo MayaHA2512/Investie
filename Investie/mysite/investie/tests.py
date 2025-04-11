@@ -17,7 +17,7 @@ class ViewTests(TestCase):
     def setUp(self):
         self.client = Client()
         self.user = User.objects.create_user(username='testuser', password='testpass')
-        self.watchlist = Watchlist.objects.create(user_id=self.user, watchlist_name='Test Watchlist', tickers=["AAPL", "GOOG"])
+        self.watchlist = Watchlist.objects.create(user=self.user, watchlist_name='Test Watchlist', tickers=["AAPL", "GOOG"])
 
     def test_index_view(self):
         response = self.client.get(reverse('index'))
