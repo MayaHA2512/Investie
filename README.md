@@ -1,62 +1,62 @@
-**INVESTIE**
+# **INVESTIE**
 
-**Introduction**
+## **Introduction**
 
-Investie is a full-stack Django web application designed to increase financial literacy among new 
-investors and streamline personal investment tracking and analysis. This project integrates a user-friendly frontend, robust middleware and a secure backend to provide a seamless experience for users.
+**Investie** is a full-stack Django web application designed to empower new investors by enhancing their financial literacy and providing a streamlined, interactive platform for personal investment tracking and analysis. This project integrates a user-friendly frontend, robust middleware, and a secure backend to offer a seamless user experience.
 
-**Project Aim & Objectives**
+## **Project Aim & Objectives**
 
-Aim: Develop a comprehensive platform to allow user to monitor and track stocks to their liking with several views which provide real time and historical data.
+### **Aim:**
+Develop a comprehensive platform that allows users to track and monitor stocks of their choice through various views providing real-time and historical data.
 
-Objectives: 
-1. Implement secure user authentication
-2. Enable users to create, read, update and delete watchlists
-3. Provide real time data visualisation
-4. Deploy the application for public access
+### **Objectives:**
+1. **Implement secure user authentication.**
+2. **Enable users to create, read, update, and delete watchlists.**
+3. **Provide real-time data visualization.**
+4. **Deploy the application for public access.**
 
-**Enterprise considerations**
+## **Enterprise Considerations**
 
-Performance 
+### **Performance:**
+- Utilized Django's efficient ORM to optimize database queries.
+- Implemented caching to reduce server load and improve response times.
 
-- Utilized Django's efficent ORM for optimized database queires
-- Implemented caching to reduce server load and improve response time
+### **Scalability:**
+- Adopted a modular architecture, separating concerns across different Django applications.
+- Designed a system that accommodates increasing user loads and growing data volumes.
 
-Scalability
-- Adopted a modular achitechture separating conceresn across different Django applications
-- Designed a system that accomodates to increasing user loads and data volume
+### **Security:**
+- Employed Django's built-in authentication system with password hashing.
+- Implemented CSRF protection and input validation to mitigate common web vulnerabilities.
+- Ensured user-friendly error messages for a smooth experience.
 
-Security
-- Employed Django's built-in authentication system with password hashing
-- Implemented CSRF protection and input validation to prevent common web vulnerabilities
-- Ensured user-friendly error messages
+### **Deployment:**
+- Deployed the application on **Render** for robust hosting.
+- Configured continuous integration and deployment pipelines to streamline updates.
 
-Deployment
-- Deployed the application on Render
-- Configured continuous integration and deployment pipelines for streamlined updates
+## **Installation and Usage Instructions**
 
-**Installation and usage instructions**
+### **Prerequisites:**
+- **Python 3.x**
+- **pip**
+- Your preferred database
+- **Git**
 
-Prerequisites
-- Python 3.x
-- pip
-- Your chosen database
-- Git
 
 Setup Steps
 
 1. Clone the repository:
-   ```
+   ```python
    git clone https://github.com/MayaHA2512/Investie.git
    cd Investie
    ```
 2. Create and activate a virtual environment:
-   ```
+   ```python
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 3. Install dependencies:
-   ```
+   ```python
    pip install -r requirements.txt
    ```
 4. Configure enviroment variables:
@@ -68,11 +68,11 @@ Setup Steps
      DATABASE_URL=your_database_url
      ```
 5. Apply migrations:
-   ```
+   ```python
    python manage.py migrate
    ```
 6. Run the development server:
-   ```
+   ```python
    python manage.py runserver
    ```
 7. Access the application at http://localhost:8000/ in your web browser
@@ -91,7 +91,7 @@ Location in Code:
 Endpoints / Modules involved:
 
 - Yahoo Finance API: yfinance was used to provide both realtime and historical data that was then surfaced for our analysis page as seen below
-  ```
+  ```python
   def index(request):
     ticker = request.GET.get('ticker', 'AAPL')
     stock_data = yf.Ticker(ticker).history(period="6mo", auto_adjust=True)
@@ -103,7 +103,7 @@ Endpoints / Modules involved:
     }
   ```
 - JS chart logic:
-  ```
+  ```python
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   const myChart = new Chart(ctx, {
              type: 'line',
