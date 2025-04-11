@@ -45,8 +45,37 @@ Prerequisites
 
 Setup Steps
 
-1. Clone the repository
-
+1. Clone the repository:
+   ```
+   git clone https://github.com/MayaHA2512/Investie.git
+   cd Investie
+   ```
+2. Create and activate a virtual environment:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+3. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+4. Configure enviroment variables:
+   - Create a .env file in the root directory.
+   - Add the following variables:
+     ```
+     SECRET_KEY=your_secret_key
+     DEBUG=True
+     DATABASE_URL=your_database_url
+     ```
+5. Apply migrations:
+   ```
+   python manage.py migrate
+   ```
+6. Run the development server:
+   ```
+   python manage.py runserver
+   ```
+7. Access the application at http://localhost:8000/ in your web browser
 
 
 
