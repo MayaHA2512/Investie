@@ -40,3 +40,4 @@ jobs:
       run: |
         cd Investie/mysite
         python manage.py test --verbosity=2
+
