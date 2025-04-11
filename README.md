@@ -199,4 +199,23 @@ Endpoints / Modules involved:
     chart_data_json = json.dumps(chart_data)
     return render(request, 'view_watchlist.html', {'watchlist': watchlist, 'chart_data': chart_data_json})
   ```
+This is how it gets displayed in the UI:
+```html
+<script>
+        var chartData = JSON.parse('{{ chart_data|escapejs }}');
 
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',  
+            data: chartData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                responsive: true
+            }
+        });
+ </script>
+```
