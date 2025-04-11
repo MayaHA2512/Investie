@@ -225,4 +225,32 @@ Below are a few screenshots documenting the workflow:
 <img width="1101" alt="Screenshot 2025-04-11 at 21 41 17" src="https://github.com/user-attachments/assets/a696b99f-b459-484b-aa52-fe4c56f45930" />
 <img width="1438" alt="Screenshot 2025-04-11 at 21 42 57" src="https://github.com/user-attachments/assets/6a518f61-de53-44a9-808a-0c74c02fadc9" />
 
+**Middleware**
 
+Purpose: Acts as the intermediary between the frontend interface and backend data sources. This layer handles HTTP request logic, processes data from APIs like Yahoo Finance, and sends appropriate responses to the frontend.
+
+Responsibiltiies:
+1. Accepts input (e.g., stock ticker) from frontend forms.
+2. Calls external APIs (yfinance) to fetch live and historical data.
+3. Prepares chart data (labels and values) for display.
+4. Returns context data to templates using Django views.
+
+Location in Code:
+- views.py in analysis/ and watchlist/ apps.
+- External API call logic (e.g., yf.Ticker(ticker).history()).
+- Data processing logic (e.g., building chart-friendly JSON).
+
+Example Snippet from Middleware (views.py):
+
+```python
+def index(request):
+    ticker = request.GET.get('ticker', 'AAPL')
+    stock_data = yf.Ticker(ticker).history(period="6mo", auto_adjust=True)
+    labels = stock_data.index.strftime('%Y-%m-%d').tolist()
+    data = stock_data['Close'].tolist()
+    chart_data = {
+        'labels': labels,
+        'data': data
+    }
+    return render(request, 'analysis.html', {'chart_data': chart_data})
+```
