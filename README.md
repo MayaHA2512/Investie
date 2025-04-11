@@ -79,7 +79,7 @@ Setup Steps
 
 **Feature overview **
 
-Realtime and historical data visualisation 
+**Realtime and historical data visualisation** 
 
 Purpose: Provides users with graphical representations of stock performance, helping them make informed investment decisions
 
@@ -119,11 +119,9 @@ Endpoints / Modules involved:
          })
   ```
   
+This is an example of the live pricing and the historical data that has been plotted:
 
+<img width="1437" alt="Screenshot 2025-04-11 at 20 09 50" src="https://github.com/user-attachments/assets/98f2a143-3e91-4f06-ab09-629f4c6f8267" />
 
-
-
-
-
-
+**User Authentication (Register/Login)**
 
