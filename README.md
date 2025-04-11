@@ -33,6 +33,7 @@ Develop a comprehensive platform that allows users to track and monitor stocks o
 ### **Deployment:**
 - Deployed the application on **Render** for robust hosting.
 - Configured continuous integration and deployment pipelines to streamline updates.
+- Website can be accessed at: https://investie.onrender.com
 
 ## **Installation and Usage Instructions**
 
@@ -254,3 +255,7 @@ def index(request):
     }
     return render(request, 'analysis.html', {'chart_data': chart_data})
 ```
+
+Although defined within views.py, this function acts as the services layer in our architecture. It bridges user interaction on the frontend with backend API logic, handling data retrieval, transformation, and delivery to the client in a clean, structured format.
+
+**CI/CD**
