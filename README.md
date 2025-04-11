@@ -125,7 +125,8 @@ This is an example of the live pricing and the historical data that has been plo
 
 **User Authentication (Register/Login)**
 
-Purpose: Provides users confidence that they're information is being stored safely 
+Purpose: Provides users confidence that they're information is being stored safely + features such as creating watchlists require a user to create a session so that they're watchlists are stored into the database appropriately 
+
 Location in Code: 
 - Frontend: templates/registration/register.html + templates/registration/login.html
 - Logic/Data: views.py
@@ -144,5 +145,14 @@ Endpoints / Modules involved:
   2. Throttling of login attempts
   3. Authentication against third-parties (OAuth, for example)
  
+Cross-Site Request Forgery (CSRF) is a vulnerability where an attacker tricks a user into performing an unwanted action on a web application where they are authenticated. Django provides built-in protections against CSRF attacks by using a middleware and token system. Enabling CSRF Middleware (Django's Default Setting): Django’s CSRF protection is enabled by default in the middleware settings. This is what the middleware looks like in the code (in settings.py):
+
+```python
+MIDDLEWARE= [
+'django.middleware.csrf.CsrfViewMiddleware',
+...]
+```
+ 
+Here are a few screenshots showcasing the authentication system:
 
 
