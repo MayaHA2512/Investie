@@ -158,4 +158,7 @@ Input Validation helps to ensure that only well-formed, safe data is processed b
 Here are a few screenshots showcasing the authentication system:
 
 <img width="1275" alt="Screenshot 2025-04-11 at 20 35 35" src="https://github.com/user-attachments/assets/6a01c7d6-eed7-47a4-a506-09f2ea7a3704" />
+<img width="1273" alt="Screenshot 2025-04-11 at 20 43 45" src="https://github.com/user-attachments/assets/338ae5a2-ca0f-4b44-9eb4-6176182c289f" />
+
+
 
