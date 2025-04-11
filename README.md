@@ -77,6 +77,50 @@ Setup Steps
    ```
 7. Access the application at http://localhost:8000/ in your web browser
 
+**Feature overview **
+
+Realtime and historical data visualisation 
+
+Purpose: Provides users with graphical representations of stock performance, helping them make informed investment decisions
+
+Location in Code: 
+- Frontend: templates/analysis.html
+- Logic/Data: views.py
+- Charts: Chart.js integration in the front end
+
+Endpoints / Modules involved:
+
+- Yahoo Finance API: yfinance was used to provide both realtime and historical data that was then surfaced for our analysis page as seen below
+  ```
+  def index(request):
+    ticker = request.GET.get('ticker', 'AAPL')
+    stock_data = yf.Ticker(ticker).history(period="6mo", auto_adjust=True)
+    labels = stock_data.index.strftime('%Y-%m-%d').tolist()
+    data = stock_data['Close'].tolist()
+    chart_data = {
+        'labels': labels,
+        'data': data
+    }
+  ```
+- JS chart logic:
+  ```
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  const myChart = new Chart(ctx, {
+             type: 'line',
+             data: {
+                 labels: data.labels,
+                 datasets: [{
+                     label: 'My First Dataset',
+                     data: data.data,
+                     borderColor: 'rgba(75, 192, 192, 1)',
+                     borderWidth: 1
+                 }]
+             }
+         })
+  ```
+  
+
+
 
 
 
