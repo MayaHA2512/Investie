@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="340e9bcf-f2da-41f8-b6e1-864b37a072fa" name="Changes" comment="new unit tests" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MayaHA2512&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MayaHA2512/Investie.git&quot;,
+    &quot;accountId&quot;: &quot;9b45d6fd-a6c6-4b5f-9746-44447efb7718&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2vU3dxvjAmJXigAg13pFPGqG6Oe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python tests.Python tests for investie.tests.StockModelTest.test_stock_creation.executor": "Debug",
+    "Python tests.Python tests for tests.StockModelTest.executor": "Debug",
+    "Python tests.Python tests for tests.StockModelTest.test_stock_creation.executor": "Debug",
+    "Python tests.Python tests for tests.ViewTests.test_index_view.executor": "Debug",
+    "Python.manage.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../Investie/mysite" />
+      <recent name="$PROJECT_DIR$/../Investie" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for tests.ViewTests.test_index_view">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Investie" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Investie" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Investie/mysite" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Investie/mysite/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for investie.tests.StockModelTest.test_stock_creation" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Investie" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Investie/mysite" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;investie.tests.StockModelTest.test_stock_creation&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.StockModelTest" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Investie" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Investie/mysite/investie" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.StockModelTest&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.StockModelTest.test_stock_creation" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Investie" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Investie/mysite/investie" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.StockModelTest.test_stock_creation&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.ViewTests.test_index_view" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Investie" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Investie/mysite/investie" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.ViewTests.test_index_view&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for tests.ViewTests.test_index_view" />
+        <item itemvalue="Python tests.Python tests for tests.StockModelTest.test_stock_creation" />
+        <item itemvalue="Python tests.Python tests for tests.StockModelTest" />
+        <item itemvalue="Python tests.Python tests for investie.tests.StockModelTest.test_stock_creation" />
+        <item itemvalue="Python.manage" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-fc1d50d2d915-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.24978.54" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="dropdown to select ticker">
+      <option name="closed" value="true" />
+      <created>1742061388007</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742061388007</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="340e9bcf-f2da-41f8-b6e1-864b37a072fa" name="Changes" comment="dropdown to select ticker" />
+      <created>1744185918085</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744185918085</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix bug to get price immediately and then every 30 seconds after that">
+      <option name="closed" value="true" />
+      <created>1744186628692</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744186628692</updated>
+    </task>
+    <task id="LOCAL-00003" summary="requirements file">
+      <option name="closed" value="true" />
+      <created>1744187907127</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744187907127</updated>
+    </task>
+    <task id="LOCAL-00004" summary="requirements file">
+      <option name="closed" value="true" />
+      <created>1744188102863</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744188102863</updated>
+    </task>
+    <task id="LOCAL-00005" summary="yaml files">
+      <option name="closed" value="true" />
+      <created>1744189204795</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744189204795</updated>
+    </task>
+    <task id="LOCAL-00006" summary="yaml files">
+      <option name="closed" value="true" />
+      <created>1744189279659</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744189279659</updated>
+    </task>
+    <task id="LOCAL-00007" summary="testing">
+      <option name="closed" value="true" />
+      <created>1744189483960</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744189483960</updated>
+    </task>
+    <task id="LOCAL-00008" summary="testing">
+      <option name="closed" value="true" />
+      <created>1744189672096</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744189672096</updated>
+    </task>
+    <task id="LOCAL-00009" summary="testing">
+      <option name="closed" value="true" />
+      <created>1744190272027</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744190272027</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Changes to select ticker using dropdown and update the live price">
+      <option name="closed" value="true" />
+      <created>1744224780604</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1744224780604</updated>
+    </task>
+    <task id="LOCAL-00011" summary="formatting the live price">
+      <option name="closed" value="true" />
+      <created>1744225012423</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1744225012423</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Updating the graph when ticker changes">
+      <option name="closed" value="true" />
+      <created>1744228256507</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1744228256507</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fetching tickers from nasdaq csv">
+      <option name="closed" value="true" />
+      <created>1744269919460</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1744269919460</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Adding a toolbar">
+      <option name="closed" value="true" />
+      <created>1744270273511</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1744270273511</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Adding home and watchlist page">
+      <option name="closed" value="true" />
+      <created>1744283956565</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1744283956565</updated>
+    </task>
+    <task id="LOCAL-00016" summary="User authentication">
+      <option name="closed" value="true" />
+      <created>1744285681728</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1744285681728</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Creating watchlists">
+      <option name="closed" value="true" />
+      <created>1744305600181</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1744305600181</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Displaying watchlists">
+      <option name="closed" value="true" />
+      <created>1744310284715</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1744310284715</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Formatting the watchlist data + ability to set the watchlist name + pretifying the watchlists page">
+      <option name="closed" value="true" />
+      <created>1744361389106</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1744361389106</updated>
+    </task>
+    <task id="LOCAL-00020" summary="formatting the cards for watchlist details">
+      <option name="closed" value="true" />
+      <created>1744362191268</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1744362191268</updated>
+    </task>
+    <task id="LOCAL-00021" summary="unit test + setting up home page">
+      <option name="closed" value="true" />
+      <created>1744366210679</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1744366210679</updated>
+    </task>
+    <task id="LOCAL-00022" summary="updating settings">
+      <option name="closed" value="true" />
+      <created>1744366362647</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1744366362647</updated>
+    </task>
+    <task id="LOCAL-00023" summary="updating settings">
+      <option name="closed" value="true" />
+      <created>1744366534402</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1744366534402</updated>
+    </task>
+    <task id="LOCAL-00024" summary="adding logging middleware">
+      <option name="closed" value="true" />
+      <created>1744368975840</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1744368975841</updated>
+    </task>
+    <task id="LOCAL-00025" summary="adding procs for deployment">
+      <option name="closed" value="true" />
+      <created>1744378447694</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1744378447694</updated>
+    </task>
+    <task id="LOCAL-00026" summary="adding procs for deployment">
+      <option name="closed" value="true" />
+      <created>1744379962850</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1744379962850</updated>
+    </task>
+    <task id="LOCAL-00027" summary="adding procs for deployment">
+      <option name="closed" value="true" />
+      <created>1744380104825</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1744380104825</updated>
+    </task>
+    <task id="LOCAL-00028" summary="adding procs for deployment">
+      <option name="closed" value="true" />
+      <created>1744383139679</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1744383139679</updated>
+    </task>
+    <task id="LOCAL-00029" summary="new unit tests">
+      <option name="closed" value="true" />
+      <created>1744387855221</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1744387855221</updated>
+    </task>
+    <task id="LOCAL-00030" summary="new unit tests">
+      <option name="closed" value="true" />
+      <created>1744388052306</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1744388052306</updated>
+    </task>
+    <task id="LOCAL-00031" summary="new unit tests">
+      <option name="closed" value="true" />
+      <created>1744389765411</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1744389765411</updated>
+    </task>
+    <task id="LOCAL-00032" summary="new unit tests">
+      <option name="closed" value="true" />
+      <created>1744390030587</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1744390030587</updated>
+    </task>
+    <task id="LOCAL-00033" summary="new unit tests">
+      <option name="closed" value="true" />
+      <created>1744391894426</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1744391894426</updated>
+    </task>
+    <task id="LOCAL-00034" summary="new unit tests">
+      <option name="closed" value="true" />
+      <created>1744392041345</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1744392041345</updated>
+    </task>
+    <task id="LOCAL-00035" summary="new unit tests">
+      <option name="closed" value="true" />
+      <created>1744392336400</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1744392336400</updated>
+    </task>
+    <task id="LOCAL-00036" summary="new unit tests">
+      <option name="closed" value="true" />
+      <created>1744392448965</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1744392448965</updated>
+    </task>
+    <task id="LOCAL-00037" summary="new unit tests">
+      <option name="closed" value="true" />
+      <created>1744410951977</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1744410951978</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adding the ticker model" />
+    <MESSAGE value="dropdown to select ticker" />
+    <MESSAGE value="fix bug to get price immediately and then every 30 seconds after that" />
+    <MESSAGE value="requirements file" />
+    <MESSAGE value="yaml files" />
+    <MESSAGE value="testing" />
+    <MESSAGE value="Changes to select ticker using dropdown and update the live price" />
+    <MESSAGE value="formatting the live price" />
+    <MESSAGE value="Updating the graph when ticker changes" />
+    <MESSAGE value="Fetching tickers from nasdaq csv" />
+    <MESSAGE value="Adding a toolbar" />
+    <MESSAGE value="Adding home and watchlist page" />
+    <MESSAGE value="User authentication" />
+    <MESSAGE value="Creating watchlists" />
+    <MESSAGE value="Displaying watchlists" />
+    <MESSAGE value="Formatting the watchlist data + ability to set the watchlist name + pretifying the watchlists page" />
+    <MESSAGE value="formatting the cards for watchlist details" />
+    <MESSAGE value="unit test + setting up home page" />
+    <MESSAGE value="updating settings" />
+    <MESSAGE value="adding logging middleware" />
+    <MESSAGE value="adding procs for deployment" />
+    <MESSAGE value="new unit tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="new unit tests" />
+  </component>
+</project>
